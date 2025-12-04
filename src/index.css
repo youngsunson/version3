@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh; /* স্ক্রিনের সমান উচ্চতা */
+  overflow: hidden; /* বাইরের বা গ্লোবাল স্ক্রলবার বন্ধ */
+}
+
+body {
+  font-family: 'Noto Sans Bengali', sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100%; /* বডির সমান উচ্চতা */
+  display: flex;
+  flex-direction: column;
+}
