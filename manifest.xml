@@ -10,9 +10,15 @@
   <DefaultLocale>bn-BD</DefaultLocale>
   <DisplayName DefaultValue="ভাষা মিত্র - বানান পরীক্ষক "/>
   <Description DefaultValue="Bangla spell checker, grammar checker, and writing assistant for Microsoft Word"/>
+<<<<<<< HEAD
   <IconUrl DefaultValue="https://youngsunson.github.io/version3/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://youngsunson.github.io/version3/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://youngsunson.github.io/version3"/>
+=======
+  <IconUrl DefaultValue="https://youngsunson.github.io/bengali-spell-check/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://youngsunson.github.io/bengali-spell-check/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://youngsunson.github.io/bengali-spell-check"/>
+>>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
   <AppDomains>
     <AppDomain>https://youngsunson.github.io</AppDomain>
     <AppDomain>https://generativelanguage.googleapis.com</AppDomain>
@@ -21,7 +27,11 @@
     <Host Name="Document"/>
   </Hosts>
   <DefaultSettings>
+<<<<<<< HEAD
     <SourceLocation DefaultValue="https://youngsunson.github.io/version3/index.html"/>
+=======
+    <SourceLocation DefaultValue="https://youngsunson.github.io/bengali-spell-check/index.html"/>
+>>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -66,6 +76,7 @@
     </Hosts>
     <Resources>
       <bt:Images>
+<<<<<<< HEAD
         <bt:Image id="Icon.16x16" DefaultValue="https://youngsunson.github.io/version3/assets/icon-16.png"/>
         <bt:Image id="Icon.32x32" DefaultValue="https://youngsunson.github.io/version3/assets/icon-32.png"/>
         <bt:Image id="Icon.80x80" DefaultValue="https://youngsunson.github.io/version3/assets/icon-80.png"/>
@@ -73,6 +84,15 @@
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://youngsunson.github.io/version3"/>
         <bt:Url id="Taskpane.Url" DefaultValue="https://youngsunson.github.io/version3/index.html"/>
+=======
+        <bt:Image id="Icon.16x16" DefaultValue="https://youngsunson.github.io/bengali-spell-check/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://youngsunson.github.io/bengali-spell-check/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://youngsunson.github.io/bengali-spell-check/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://youngsunson.github.io/bengali-spell-check"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://youngsunson.github.io/bengali-spell-check/index.html"/>
+>>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="ভাষা মিত্র চালু হয়েছে!"/>

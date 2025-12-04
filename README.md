@@ -24,7 +24,11 @@ AI-powered Bangla spell checker, grammar checker, and writing assistant powered 
 
 1. **Clone the repository**
    ```bash
+<<<<<<< HEAD
    git clone https://github.com/youngsunson/version3.git
+=======
+   git clone https://github.com/youngsunson/bengali-spell-check.git
+>>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
    cd bhashamitra
    ```
 
@@ -79,7 +83,11 @@ npm run deploy
 This will:
 - Build the project to `dist/` folder
 - Deploy to `gh-pages` branch
+<<<<<<< HEAD
 - Make it available at: `https://youngsunson.github.io/version3/`
+=======
+- Make it available at: `https://youngsunson.github.io/bengali-spell-check/`
+>>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
 
 ### 3. GitHub Pages Settings
 
@@ -151,7 +159,11 @@ MIT License - See LICENSE file for details
 
 ## 🐛 Issues & Support
 
+<<<<<<< HEAD
 For issues and support, please visit: [GitHub Issues](https://github.com/youngsunson/version3/issues)
+=======
+For issues and support, please visit: [GitHub Issues](https://github.com/youngsunson/bengali-spell-check/issues)
+>>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
 
 ---
 

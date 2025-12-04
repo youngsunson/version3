@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "বাংলা বানান পরীক্ষক এবং ব্যাকরণ সহায়ক",
   "author": "Himadri Biswas",
+<<<<<<< HEAD
   "homepage": "https://youngsunson.github.io/version3/index.html",
+=======
+  "homepage": "https://youngsunson.github.io/bengali-spell-check/index.html",
+>>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
   "supportedOfficeApps": [
     "Word"
   ],

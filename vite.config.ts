@@ -45,7 +45,11 @@ function getCertificates() {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+<<<<<<< HEAD
   base: '/version3/', // GitHub Pages base path
+=======
+  base: '/bengali-spell-check/', // GitHub Pages base path
+>>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
   root: '.',
   build: {
     outDir: 'dist',
