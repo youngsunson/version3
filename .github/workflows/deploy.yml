@@ -1,62 +1,66 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
+push:
+branches: ["main"]
+workflow_dispatch:
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+contents: write
+pages: write
+id-token: write
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+build-and-deploy:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout
+uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: 'npm'
+  - name: Setup Node
+    uses: actions/setup-node@v4
+    with:
+      node-version: "20"
+      cache: 'npm'
 
-      - name: Clear npm cache
-        run: npm cache clean --force
+  - name: Clear npm cache
+    run: npm cache clean --force
 
-      - name: Install dependencies
-        run: npm ci
+  - name: Install dependencies
+    # 'rollup-plugin-license' সহ সমস্ত প্যাকেজ 'npm ci' এর মাধ্যমে ইনস্টল হবে।
+    run: npm ci
 
-      - name: Build
-        run: npm run build
+  - name: Build
+    run: npm run build
 
-      # -----------------------------------------------------------------
-      # নতুন স্টেপ: কম্পাইল করা JavaScript কোড Obfuscate করা
-      # -----------------------------------------------------------------
-      - name: Obfuscate Compiled JavaScript
-        run: |
-          # 1. আপনার পছন্দের obfuscator টুল ইন্সটল করুন।
-          # (উদাহরণস্বরূপ: javascript-obfuscator)
-          npm install -g javascript-obfuscator 
-          
-          # 2. বিল্ড ডিরেক্টরি সেট করুন। 
-          BUILD_DIR="./dist"
-          
-          # 3. 'dist' ডিরেক্টরির মধ্যে থাকা সমস্ত .js ফাইলকে Obfuscate করুন।
-          # এটি মূল .js ফাইলগুলিকে Obfuscated কোড দিয়ে ওভাররাইট করবে।
-          echo "Starting obfuscation in ${BUILD_DIR}..."
-          find ${BUILD_DIR} -name "*.js" -exec javascript-obfuscator {} --output {} \;
-          echo "Obfuscation Complete."
-      # -----------------------------------------------------------------
+  # -----------------------------------------------------------------
+  # নতুন স্টেপ: কম্পাইল করা JavaScript কোড Obfuscate করা
+  # -----------------------------------------------------------------
+  - name: Obfuscate Compiled JavaScript
+    run: |
+      # 1. আপনার পছন্দের obfuscator টুল ইন্সটল করুন।
+      # (উদাহরণস্বরূপ: javascript-obfuscator)
+      # এটি এই স্টেপের জন্য গ্লোবালি ইনস্টল করা হচ্ছে, যা প্রতিটি বিল্ডে সময় নেবে।
+      npm install -g javascript-obfuscator 
+      
+      # 2. বিল্ড ডিরেক্টরি সেট করুন। 
+      BUILD_DIR="./dist"
+      
+      # 3. 'dist' ডিরেক্টরির মধ্যে থাকা সমস্ত .js ফাইলকে Obfuscate করুন।
+      # এটি মূল .js ফাইলগুলিকে Obfuscated কোড দিয়ে ওভাররাইট করবে।
+      echo "Starting obfuscation in ${BUILD_DIR}..."
+      # এখানে obfuscator চালানোর সময় লাইসেন্স হেডার যেন অক্ষত থাকে, তা নিশ্চিত করুন।
+      # rollup-plugin-license হেডারে /*! কমেন্ট স্টাইল ব্যবহার করলে obfuscator তা মুছে ফেলবে না।
+      find ${BUILD_DIR} -name "*.js" -exec javascript-obfuscator {} --output {} \;
+      echo "Obfuscation Complete."
+  # -----------------------------------------------------------------
 
-      - name: Copy manifest.xml to dist (if not in public/)
-        run: cp manifest.xml dist/
+  - name: Copy manifest.xml to dist (if not in public/)
+    run: cp manifest.xml dist/
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
+  - name: Deploy to gh-pages
+    uses: peaceiris/actions-gh-pages@v4
+    with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      publish_dir: ./dist
+      publish_branch: gh-pages
