@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+িimport { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
@@ -45,11 +45,7 @@ function getCertificates() {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-<<<<<<< HEAD
   base: '/version3/', // GitHub Pages base path
-=======
-  base: '/bengali-spell-check/', // GitHub Pages base path
->>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
   root: '.',
   build: {
     outDir: 'dist',
