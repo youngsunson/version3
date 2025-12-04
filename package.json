@@ -22,8 +22,8 @@
     "grammar",
     "gemini-ai"
   ],
-  "author": "Bhasha Mitra",
-  "license": "MIT",
+  "author": "হিমাদ্রি বিশ্বাস",
+  "license": "GNU AGPLv3",
   "dependencies": {
     "@types/office-js": "^1.0.376",
     "react": "^18.2.0",
