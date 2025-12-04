@@ -70,11 +70,11 @@ export default defineConfig({
     licenseBanner ? license({
       sourcemap: true,
       // শুধুমাত্র সোর্স কোডে লাইসেন্স ব্যানার যুক্ত করুন
-        banner: {
-        // 'custom' ব্যবহার করে আমরা নিশ্চিত করছি যে এটি /*! দিয়ে শুরু হবে,
-        // যা obfuscator-কে বোঝাবে যে এটি গুরুত্বপূর্ণ এবং মুছে ফেলা যাবে না।
-        commentStyle: 'custom', 
-        content: `/*!\n${licenseBanner}\n*/`, 
+      banner: {
+        // 'ignored' স্টাইল স্বয়ংক্রিয়ভাবে /*! কমেন্ট তৈরি করে, যা বিল্ডকে সফল করবে
+        // এবং Obfuscator থেকে লাইসেন্সকে বাঁচাবে।
+        commentStyle: 'ignored', 
+        content: licenseBanner,
       },
       // থার্ড-পার্টি ডিপেন্ডেন্সি থেকে লাইসেন্স সংক্রান্ত তথ্য সংগ্রহ করুন
       thirdParty: {
