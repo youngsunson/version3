@@ -1,27 +1,8 @@
-import { defineConfig } from 'vite';
+িimport { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-
-// ১. রোলআপ লাইসেন্স প্লাগইন ইমপোর্ট করুন
-import license from 'rollup-plugin-license'; 
-
-// --- ২. লাইসেন্স হেডার লোডিং লজিক ---
-// লাইসেন্স ফাইলের পাথ সেট করুন (ধরে নেওয়া হচ্ছে এটি রুট ডিরেক্টরিতে আছে)
-const LICENSE_HEADER_FILE = path.resolve(__dirname, 'LICENSE_HEADER.txt');
-
-// ফাইল সিস্টেম থেকে লাইসেন্স ব্যানার টেক্সট লোড করুন
-let licenseBanner = '';
-try {
-    licenseBanner = fs.readFileSync(LICENSE_HEADER_FILE, 'utf-8');
-    console.log('✅ License header loaded successfully from LICENSE_HEADER.txt');
-} catch (error) {
-    // ফাইল লোড করতে ব্যর্থ হলে, একটি সতর্কতা দেখানো হবে কিন্তু বিল্ড চলতে থাকবে।
-    console.error('❌ Error loading LICENSE_HEADER.txt. Build will continue without license header.');
-}
-// ------------------------------------
-
 
 // Check for certificates in multiple locations
 function getCertificates() {
@@ -63,28 +44,7 @@ function getCertificates() {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    // ৩. Rollup License Plugin কনফিগারেশন:
-    // লাইসেন্স ব্যানার লোড না হলে, প্লাগইনটি যুক্ত করা হবে না
-    licenseBanner ? license({
-      sourcemap: true,
-      // শুধুমাত্র সোর্স কোডে লাইসেন্স ব্যানার যুক্ত করুন
-      banner: {
-        commentStyle: 'slash', // /* ... */ কমেন্ট স্টাইল ব্যবহার করা হয়েছে
-        content: licenseBanner,
-      },
-      // থার্ড-পার্টি ডিপেন্ডেন্সি থেকে লাইসেন্স সংক্রান্ত তথ্য সংগ্রহ করুন
-      thirdParty: {
-        includePrivate: true,
-        output: {
-          file: path.join(__dirname, 'dist', 'dependencies.txt'),
-          encoding: 'utf8',
-        }
-      }
-    }) : undefined,
-  ].filter(Boolean), // undefined প্লাগইনগুলি ফিল্টার করে বাদ দেওয়া হয়েছে (যখন লাইসেন্স লোড হয় না)
-
+  plugins: [react()],
   base: '/version3/', // GitHub Pages base path
   root: '.',
   build: {
