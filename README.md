@@ -1,170 +1,66 @@
-# 🌟 ভাষা মিত্র - Bangla Language Assistant for Microsoft Word
+# 🌟 ভাষা মিত্র — বাংলা লেখার সেরা সহযোগী  
+### _Bangla Language Assistant powered by Google Gemini_
 
-AI-powered Bangla spell checker, grammar checker, and writing assistant powered by Google Gemini.
-
-## ✨ Features
-
-- ✅ **বানান পরীক্ষা** - Spell checking with suggestions
-- ✅ **লেখার ভাব বিশ্লেষণ** - Tone analysis and improvements
-- ✅ **সাধু-চলিত মিশ্রণ সনাক্তকরণ** - Detect and fix language style mixing
-- ✅ **বিরাম চিহ্ন পরামর্শ** - Punctuation suggestions
-- ✅ **শ্রুতিমধুরতা উন্নতি** - Euphony improvements
-- ✅ **লেখার ধরন বিশ্লেষণ** - Content type analysis
-- ✅ **অনুপস্থিত উপাদান চিহ্নিত** - Missing elements detection
-- ✅ **উন্নতির পরামর্শ** - Improvement suggestions
-
-## 🚀 Local Development
-
-### Prerequisites
-
-- Node.js 16+
-- Microsoft Word (Desktop)
-
-### Setup
-
-1. **Clone the repository**
-   ```bash
-<<<<<<< HEAD
-   git clone https://github.com/youngsunson/version3.git
-=======
-   git clone https://github.com/youngsunson/bengali-spell-check.git
->>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
-   cd bhashamitra
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Install development certificates**
-   ```bash
-   npx office-addin-dev-certs install --machine
-   ```
-   Click "Yes" when prompted.
-
-4. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-5. **Load add-in in Word**
-   
-   **Option A: Automatic (Recommended)**
-   ```bash
-   npm run start
-   ```
-   
-   **Option B: Manual**
-   - Open Microsoft Word
-   - Go to **Insert** → **Add-ins** → **Get Add-ins**
-   - Click **MY ADD-INS** → **Upload My Add-in**
-   - Select `manifest-dev.xml`
-   - Click **Upload**
-
-6. **Use the add-in**
-   - Go to **Home** tab in Word
-   - Click **"বানান পরীক্ষক"** button
-   - Enter your Google Gemini API Key in settings
-   - Start checking your Bangla text!
-
-## 📦 Production Deployment (GitHub Pages)
-
-### 1. Install gh-pages
-```bash
-npm install
-```
-
-### 2. Build and Deploy
-```bash
-npm run deploy
-```
-
-This will:
-- Build the project to `dist/` folder
-- Deploy to `gh-pages` branch
-<<<<<<< HEAD
-- Make it available at: `https://youngsunson.github.io/version3/`
-=======
-- Make it available at: `https://youngsunson.github.io/bengali-spell-check/`
->>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
-
-### 3. GitHub Pages Settings
-
-1. Go to your repository on GitHub
-2. **Settings** → **Pages**
-3. **Source**: Deploy from a branch
-4. **Branch**: Select `gh-pages`
-5. **Folder**: `/ (root)`
-6. Click **Save**
-
-Wait 2-3 minutes for deployment.
-
-### 4. Load Production Add-in in Word
-
-Use the production `manifest.xml` file:
-- **Insert** → **Add-ins** → **Upload My Add-in**
-- Select `manifest.xml` (NOT manifest-dev.xml)
-- The add-in will load from GitHub Pages
-
-## 🔑 Getting Google Gemini API Key
-
-1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Click **"Create API Key"**
-3. Copy the API key
-4. Paste it in the add-in settings (⚙️ icon)
-
-## 📝 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run deploy` - Build and deploy to GitHub Pages
-- `npm run start` - Load add-in in Word (development)
-- `npm run start:prod` - Load add-in in Word (production)
-- `npm run validate` - Validate production manifest
-- `npm run validate:dev` - Validate development manifest
-
-## 📂 Project Structure
-
-```
-bhashamitra/
-├── src/
-│   ├── index.tsx       # Main React application
-│   └── index.css       # Styles
-├── public/
-│   └── assets/         # Icons
-├── manifest.xml        # Production manifest (GitHub Pages)
-├── manifest-dev.xml    # Development manifest (localhost)
-├── package.json        # Dependencies and scripts
-├── vite.config.ts      # Vite configuration
-├── tsconfig.json       # TypeScript configuration
-└── README.md           # This file
-```
-
-## 🤝 AI Models Supported
-
-- **Gemini 2.5 Flash** - Latest and best (Recommended)
-- **Gemini 2.0 Flash** - New and fastest
-- **Gemini 1.5 Pro** - Best quality
-- **Gemini 1.5 Flash** - Fast
-- **Gemini Pro** - Standard
-
-## 📄 License
-
-MIT License - See LICENSE file for details
-
-## 👨‍💻 Author
-
-**Bhasha Mitra Team**
-
-## 🐛 Issues & Support
-
-<<<<<<< HEAD
-For issues and support, please visit: [GitHub Issues](https://github.com/youngsunson/version3/issues)
-=======
-For issues and support, please visit: [GitHub Issues](https://github.com/youngsunson/bengali-spell-check/issues)
->>>>>>> 33e9d5d428f4a0b8861a6415a60bd1c2f8c08de9
+**ভাষা মিত্র** হলো Google Gemini দ্বারা চালিত একটি শক্তিশালী AI অ্যাড-ইন যা আপনার Microsoft Word ডকুমেন্টকে ত্রুটিমুক্ত, প্রাঞ্জল ও পেশাদার করে তোলে। এটি বিশেষভাবে **বাংলা ভাষার লেখকদের** চাহিদা মেটানোর জন্য ডিজাইন করা হয়েছে।
 
 ---
 
-Made with ❤️ for Bangla language lovers
+## ✨ প্রধান ফিচারসমূহ (Features)
+
+- ✅ **বানান ও ব্যাকরণ পরীক্ষা**  
+  অ্যাডভান্সড স্পেলিং ও গ্রামার চেকিং সহ প্রাসঙ্গিক পরামর্শ।
+
+- ✅ **লেখার ভাব ও স্বর বিশ্লেষণ**  
+  আপনার লেখার টোন (Formal/Casual) বিশ্লেষণ করে উপযুক্ত সংশোধন সুপারিশ।
+
+- ✅ **সাধু-চলিত মিশ্রণ সনাক্তকরণ**  
+  স্বয়ংক্রিয়ভাবে সাধু ও চলিত রীতির অসঙ্গতি চিহ্নিত করে সংশোধন করে।
+
+- ✅ **বিরাম চিহ্ন পরামর্শ**  
+  লেখার ফ্লো উন্নত করতে স্মার্ট পাংচুয়েশন সাজেশন।
+
+- ✅ **শ্রুতিমধুরতা উন্নতি**  
+  বাক্য গঠন ও শব্দ চয়নের মাধ্যমে লেখার সাবলীলতা (Euphony) ও ছন্দ বৃদ্ধি।
+
+- ✅ **লেখার ধরন বিশ্লেষণ**  
+  কন্টেন্টের প্রকার (প্রবন্ধ, রিপোর্ট, গল্প ইত্যাদি) চিহ্নিত করে প্রাসঙ্গিক পরামর্শ প্রদান।
+
+- ✅ **অনুপস্থিত উপাদান চিহ্নিতকরণ**  
+  কাঠামোগত অভাব (যেমন: ভূমিকা, উপসংহার) চিহ্নিত করে।
+
+- ✅ **উন্নতির পরামর্শ**  
+  লেখার বিষয়বস্তু ও প্রেক্ষাপট অনুযায়ী বিশদ উন্নতির পরামর্শ।
+
+---
+
+## 🚀 দ্রুত শুরু (Quick Start)
+
+অ্যাড-ইনটি ব্যবহার করা খুব সহজ! শুধুমাত্র একবার **আপনার Google Gemini API Key** যোগ করুন।
+
+### 🔑 Google Gemini API Key যোগ করুন:
+1. [Google AI Studio](https://aistudio.google.com/) এ যান।
+2. **“Create API Key”** অপশনে ক্লিক করুন এবং আপনার API Key কপি করুন।
+3. Microsoft Word-এ **ভাষা মিত্র** অ্যাড-ইন খুলুন এবং সেটিংস (⚙️) থেকে API Key পেস্ট করুন।
+
+> 🔒 আপনার API Key শুধুমাত্র **আপনার ডিভাইসে স্থানীয়ভাবে সংরক্ষিত** থাকে — কখনো ক্লাউড বা সার্ভারে পাঠানো হয় না।
+
+---
+
+## 🤖 সমর্থিত AI মডেলসমূহ
+
+ভাষা মিত্র নিম্নলিখিত **Gemini মডেলগুলির সাথে কাজ করে**:
+
+| মডেল | ব্যবহার |
+|------|--------|
+| **Gemini 2.5 Flash** | গতি ও ক্ষমতার জন্য **সবচেয়ে সুপারিশকৃত** |
+| **Gemini 1.5 Pro** | সর্বোচ্চ গুণমান ও গভীর বিশ্লেষণের জন্য আদর্শ |
+| **Gemini 2.0 Flash** | দ্রুততম প্রতিক্রিয়া — রিয়েল-টাইম সহায়তার জন্য উপযুক্ত |
+
+---
+
+## 👨‍💻 লেখক ও সমর্থন
+
+- **ডেভেলপার**: Bhasha Mitra Team  
+- **GitHub Issues**: [সমস্যা বা পরামর্শের জন্য এখানে ক্লিক করুন](https://github.com/youngsunson/version3/issues)
+
+> ⚠️ **দ্রষ্টব্য**: এই অ্যাড-ইনটি **OpenAI নয়** — এটি **Google Gemini প্ল্যাটফর্ম** দ্বারা চালিত।
